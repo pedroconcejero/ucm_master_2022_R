@@ -1,2 +1,2 @@
-# ucm_master_big_data
-UCM Big Data Master 2022
+# UNED_master_visualizacion
+Código R y datos para master UNED Big Data - módulo visualización
