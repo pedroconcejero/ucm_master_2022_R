@@ -3,7 +3,7 @@
 
 # asegúrate de cambiar tu directorio de trabajo (donde has descargado todo el repo.)
 
-setwd("/home/pedro/Escritorio/UCM_2022/UCM_master_big_data")
+setwd("C:/Users/Hp/Desktop/master UCM nov 22/ucm_master_big_data-main/ucm_master_big_data-main")
 
 # si no tienes instalado el paquete "sp" instálalo
 #install.packages("sp")
@@ -35,7 +35,7 @@ plot(andalucia)
 # Con cambios en escalas de color a partir de taller de color de grupo R madrid:
 # https://github.com/pedroconcejero/taller-color/blob/master/taller_color_def_grupo_madrid.rmd
 
-githubURL1 <- "https://github.com/pedroconcejero/UCM_master_visualizacion/blob/main/tasas_paro_andalucia.rda?raw=true"
+githubURL1 <- "https://github.com/pedroconcejero/ucm_master_big_data/raw/main/tasas_paro_andalucia.rda"
 
 load(url(githubURL1))
 

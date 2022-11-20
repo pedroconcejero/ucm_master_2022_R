@@ -119,14 +119,15 @@ library(ggradar)
 library(dplyr)
 library(scales)
 
-mtcars_radar <- mtcars %>% 
+mtcars_radar <- mtcars[ , c(3:14)] %>% 
   as_tibble(rownames = "group") %>% 
   mutate_at(vars(-group), rescale) %>% 
-  head(6) %>% 
-  select(1:10) %>%
-  ggradar()
+  tail(4) %>% 
+  select(1:10)
 
 mtcars_radar
+
+ggradar(mtcars_radar)
 
 # 5 ggmosaic
 

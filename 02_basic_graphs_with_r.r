@@ -3,7 +3,7 @@
 
 # Usaremos este conjunto de datos del paquete base
 
-setwd("/home/pedro/Escritorio/UCM_2022/UCM_master_big_data")
+#setwd("/home/pedro/Escritorio/UCM_2022/UCM_master_big_data")
 
 summary(mtcars)
 str(mtcars)

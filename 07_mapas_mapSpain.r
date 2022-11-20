@@ -363,6 +363,10 @@ ggplot(hex) +
 ### Creación de mapas estáticos
 
 # Tenemos varias opciones que podemos emplear para componer mapas base:
+
+# Requerido para que funcione esp_getTiles
+install.packages("slippymath")
+library(slippymath)
   
 madrid_munis <- esp_get_munic_siane(region = "Madrid")
 base_pnoa <- esp_getTiles(madrid_munis, 
@@ -370,14 +374,26 @@ base_pnoa <- esp_getTiles(madrid_munis,
                           bbox_expand = 0.1, 
                           zoommin = 1)
 
-ggplot() +
-  layer_spatraster(base_pnoa) +
-  geom_sf(
-    data = madrid_munis, color = "blue", fill = "blue",
-    alpha = 0.25, lwd = 0.5
-  ) +
-  theme_minimal() +
-  labs(title = "Municipios en Madrid")
+# Noviembre 2022
+# mapSpain requiere instalar tidyterra
+library(terra)
+install.packages("tidyterra")
+library(tidyterra)
+
+# Noviembre 2022
+# Lamentablemente, mapspain ha cambiado *por completo* su forma de visualizar
+# mapas raster y hay que cambiar el código siguiente porque falla.
+# Esto es muy reciente y francamente no creo que sea importante
+# Aun así lo estudiaré para actualizarlo
+
+# ggplot() +
+#   tidyterra::geom_spatraster_rgb(base_pnoa) +
+#   geom_sf(
+#     data = madrid_munis, color = "blue", fill = "blue",
+#     alpha = 0.25, lwd = 0.5
+#   ) +
+#   theme_minimal() +
+#   labs(title = "Municipios en Madrid")
 
 
 ### Mapas dinámicos usando mapSpain
